@@ -859,14 +859,14 @@ def formstyle_bootstrap3_stacked(form, fields):
                 label = ''
             elif isinstance(controls, (SELECT, TEXTAREA)):
                 controls.add_class('form-control')
-
+                            
         elif isinstance(controls, SPAN):
             _controls = P(controls.components)
 
         elif isinstance(controls, UL):
             for e in controls.elements("input"):
                 e.add_class('form-control')
-
+                
         if isinstance(label, LABEL):
             label['_class'] = 'control-label'
 
@@ -909,9 +909,9 @@ def formstyle_bootstrap3_inline_factory(col_label_size=3):
                     label = ''
                 elif isinstance(controls, (SELECT, TEXTAREA)):
                     controls.add_class('form-control')
-
+                
             elif isinstance(controls, SPAN):
-                _controls = P(controls.components,
+                _controls = P(controls.components, 
                               _class="form-control-static %s" % col_class)
             elif isinstance(controls, UL):
                 for e in controls.elements("input"):
@@ -1678,7 +1678,7 @@ class SQLFORM(FORM):
                         self.vars.update(pk)
                     else:
                         ret = False
-            elif self.table._db._uri:
+            else:
                 if record_id:
                     self.vars.id = self.record[self.id_field_name]
                     if fields:
@@ -1691,7 +1691,6 @@ class SQLFORM(FORM):
 
     AUTOTYPES = {
         type(''): ('string', None),
-        type(u''): ('string',None),
         type(True): ('boolean', None),
         type(1): ('integer', IS_INT_IN_RANGE(-1e12, +1e12)),
         type(1.0): ('double', IS_FLOAT_IN_RANGE()),
@@ -1756,16 +1755,10 @@ class SQLFORM(FORM):
             keywords = keywords[0]
             request.vars.keywords = keywords
         key = keywords.strip()
-        if key and not '"' in key:
+        if key and ' ' not in key and not '"' in key and not "'" in key:
             SEARCHABLE_TYPES = ('string', 'text', 'list:string')
-            sfields = [field for field in fields if field.type in SEARCHABLE_TYPES]
-            if settings.global_settings.web2py_runtime_gae:
-                return reduce(lambda a,b: a|b, [field.contains(key) for field in sfields])
-            else:
-                return reduce(lambda a,b:a&b,[
-                        reduce(lambda a,b: a|b, [
-                                field.contains(k) for field in sfields]
-                               ) for k in key.split()])
+            parts = [field.contains(
+                key) for field in fields if field.type in SEARCHABLE_TYPES]
 
             # from https://groups.google.com/forum/#!topic/web2py/hKe6lI25Bv4
             # needs testing...
@@ -1779,6 +1772,10 @@ class SQLFORM(FORM):
             #        filters.append(reduce(lambda a, b: (a & b), all_words_filters))
             #parts = filters
 
+        else:
+            parts = None
+        if parts:
+            return reduce(lambda a, b: a | b, parts)
         else:
             return smart_query(fields, key)
 
@@ -1841,19 +1838,15 @@ class SQLFORM(FORM):
                 operators = SELECT(*[OPTION(T(option), _value=option) for option in options], _class='form-control')
                 _id = "%s_%s" % (value_id, name)
                 if field_type in ['boolean', 'double', 'time', 'integer']:
-                    widget_ = SQLFORM.widgets[field_type]
-                    value_input = widget_.widget(field, field.default, _id=_id, _class=widget_._class + ' form-control')
+                    value_input = SQLFORM.widgets[field_type].widget(field, field.default, _id=_id, _class='form-control')
                 elif field_type == 'date':
-                    iso_format = {'_data-w2p_date_format': '%Y-%m-%d'}
-                    widget_ = SQLFORM.widgets.date
-                    value_input = widget_.widget(field, field.default, _id=_id, _class=widget_._class + ' form-control', **iso_format)
+                    iso_format = {'_data-w2p_date_format' : '%Y-%m-%d'}
+                    value_input = SQLFORM.widgets.date.widget(field, field.default, _id=_id, _class='form-control', **iso_format)
                 elif field_type == 'datetime':
-                    iso_format = {'_data-w2p_datetime_format': '%Y-%m-%d %H:%M:%S'}
-                    widget_ = SQLFORM.widgets.datetime
-                    value_input = widget_.widget(field, field.default, _id=_id, _class=widget_._class + ' form-control', **iso_format)
+                    iso_format = {'_data-w2p_datetime_format' : '%Y-%m-%d %H:%M:%S'}
+                    value_input = SQLFORM.widgets.datetime.widget(field, field.default, _id=_id, _class='form-control', **iso_format)
                 elif (field_type.startswith('reference ') or
                       field_type.startswith('list:reference ')) and \
-                      hasattr(field.requires, 'options') or \
                       hasattr(field.requires, 'options'):
                     value_input = SELECT(
                         *[OPTION(v, _value=k)
@@ -1863,8 +1856,7 @@ class SQLFORM(FORM):
                 elif field_type.startswith('reference ') or \
                      field_type.startswith('list:integer') or \
                      field_type.startswith('list:reference '):
-                    widget_ = SQLFORM.widgets.integer
-                    value_input = widget_.widget(field, field.default, _id=_id, _class=widget_._class + ' form-control')
+                    value_input = SQLFORM.widgets.integer.widget(field, field.default, _id=_id, _class='form-control')
                 else:
                     value_input = INPUT(
                         _type='text', _id=_id,
@@ -2114,8 +2106,10 @@ class SQLFORM(FORM):
         # - url has valid signature (vars are not signed, only path_info)
         # = url does not contain 'create','delete','edit' (readonly)
         if user_signature:
-            if not ('/'.join(map(str,args)) == '/'.join(map(str,request.args)) or
-                    URL.verify(request, user_signature=user_signature, hash_vars=False) or
+            if not (
+                '/'.join(str(a) for a in args) == '/'.join(request.args) or
+                URL.verify(request, user_signature=user_signature,
+                           hash_vars=False) or
                     (request.args(len(args)) == 'view' and not logged)):
                 session.flash = T('not authorized')
                 redirect(referrer)
@@ -2681,10 +2675,7 @@ class SQLFORM(FORM):
                         continue
                     if field.type == 'blob':
                         continue
-                    if isinstance(field, Field.Virtual) and field.tablename in row:
-                        value = dbset.db[field.tablename][row[field.tablename][field_id]][field.name]
-                    else:
-                        value = row[str(field)]
+                    value = row[str(field)]
                     maxlength = maxtextlengths.get(str(field), maxtextlength)
                     if field.represent:
                         if field.type.startswith('reference'):

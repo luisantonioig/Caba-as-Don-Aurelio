@@ -119,7 +119,7 @@ class LockedFile(object):
             lock(self.file, LOCK_EX)
             if not 'a' in mode:
                 self.file.seek(0)
-                self.file.truncate(0)
+                self.file.truncate()
         else:
             raise RuntimeError("invalid LockedFile(...,mode)")
 
