@@ -1,57 +1,61 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*,cover
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
+.*
+*.pyc
+*.pyo
+*~
+#*
+*.1
+*.bak
+*.bak2
+*.svn
+*.w2p
+*.class
+*.rej
+*.orig
+Thumbs.db
+.DS_Store
+index.yaml
+routes.py
+logging.conf
+gluon/tests/VERSION
+gluon/tests/sql.log
+httpserver.log
+httpserver.pid
+parameters*.py
+./deposit
+./benchmark
+./build
+./dist*
+./dummy_tests
+./optional_contrib
+./ssl
+./docs
+./logs
+./*.zip
+./gluon/*.1
+./gluon/*.txt
+./admin.w2p
+./examples.w2p
+cron.master
+applications/*
+!applications/welcome
+!applications/welcome/*
+!applications/examples
+!applications/examples/*
+!applications/admin
+!applications/admin/*
+applications/*/databases/*
+applications/*/sessions/*
+applications/*/errors/*
+applications/*/cache/*
+applications/*/uploads/*
+applications/*/*.py[oc]
+applications/*/static/temp
+applications/*/progress.log
+applications/examples/static/epydoc
+applications/examples/static/sphinx
+applications/admin/cron/cron.master
+HOWTO-web2py-devel
+*.sublime-project
+*.sublime-workspace
+.idea/*
+site-packages/
