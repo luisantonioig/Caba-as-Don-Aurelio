@@ -96,7 +96,6 @@ db.define_table('reservaciones',
                 Field('nombre',requires=IS_NOT_EMPTY()),
                 Field('apellidoP',requires=IS_NOT_EMPTY()),
                 Field('apellidoM',requires=IS_NOT_EMPTY()),
-                Field('fechaIni',requires=IS_NOT_EMPTY(),type='date'),
-                Field('fechaFin',requires=IS_NOT_EMPTY(),type='date'),
-                Field('costo', requires=IS_NOT_EMPTY(),type='double'))
-
+                Field('fechaIni','date'),
+                Field('fechaFin','date'),
+                Field('costo', requires=IS_NOT_EMPTY()))

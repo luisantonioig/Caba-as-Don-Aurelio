@@ -62,5 +62,5 @@ def reservaciones():
     return dict (alin=alin)
 
 def verReservacion():
-    grid = SQLFORM.smartgrid(db.reservaciones, linked_tables=['post'], user_signature=False, links =[lambda row: A(T('Vista de Impresion'), _class='button btn btn-default')], fields=[db.reservaciones.nombre],editable=False, details=False)
-    return dict(grid=grid)
+    Form = SQLFORM.smartgrid(db.reservaciones, linked_tables=['post'], user_signature=False, links =[lambda row: A(T('Vista de Impresion'), _class='button btn btn-default')], fields=[db.reservaciones.nombre, db.reservaciones.apellidoM, db.reservaciones.apellidoP, db.reservaciones.fechaIni, db.reservaciones.fechaFin, db.reservaciones.costo], editable=False, details=False, csv=False)
+    return dict(Form=Form)
