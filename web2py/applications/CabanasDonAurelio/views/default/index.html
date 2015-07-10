@@ -1,6 +1,24 @@
 {{extend 'layout.html'}}
 
 {{block header}}
+<link rel="stylesheet" href="{{=URL('static/css','estilos.css')}}">
+<link rel="stylesheet" href="{{=URL('static/css','fonts.css')}}">
+<div class ="main">
+    <div class= "slides">
+        <img src={{=URL('static/images','1.jpg')}}>
+        <img src={{=URL('static/images','2.jpg')}}>
+        <img src={{=URL('static/images','3.jpg')}}>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="{{=URL('static/js','jquery.slides.js')}}"></script>
+<script>
+    $(function(){
+      $(".slides").slidesjs({
+      });
+    });
+  </script>
+
     <header class="container-fluid background">
       <div class="jumbotron text-center" >
         {{if response.title:}}
