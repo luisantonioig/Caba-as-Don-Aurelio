@@ -1,6 +1,17 @@
 {{extend 'layout.html'}}
 
 {{block header}}
+ <header class="container-fluid background">
+      <div class="jumbotron text-center" >
+        {{if response.title:}}
+          <h1>
+              </br>
+          <small>{{=response.subtitle or ''}}</small></h1>
+        {{pass}}
+      </div>
+    </header>
+{{end}}
+{{block body}}
 <link rel="stylesheet" href="{{=URL('static/css','estilos.css')}}">
 <link rel="stylesheet" href="{{=URL('static/css','fonts.css')}}">
 <div class ="main">
@@ -18,18 +29,4 @@
       });
     });
   </script>
-
-    <header class="container-fluid background">
-      <div class="jumbotron text-center" >
-        {{if response.title:}}
-          <h1>
-              </br>
-          <small>{{=response.subtitle or ''}}</small></h1>
-        {{pass}}
-      </div>
-    </header>
-{{end}}
-{{block body}}
-    
-
 {{end}}
