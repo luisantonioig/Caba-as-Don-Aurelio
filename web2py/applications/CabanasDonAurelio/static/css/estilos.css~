@@ -9,7 +9,7 @@ body {
 
 .main{
     width:90%;
-    max-width:700 px;
+    max-width:1000 px;
     margin:20px auto;
 }
 .slides{
