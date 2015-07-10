@@ -1,0 +1,5 @@
+{{extend = "layout"}}
+<h1>
+  Reservaciones
+</h1>
+{{=alin}}
