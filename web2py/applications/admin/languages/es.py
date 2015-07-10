@@ -150,7 +150,9 @@
 'Download': 'Descargar',
 'download files via http:': 'descargar archivos via http:',
 'download layouts': 'descargar layouts',
+'Download layouts from repository': 'Download layouts from repository',
 'download plugins': 'descargar plugins',
+'Download plugins from repository': 'Download plugins from repository',
 'E-mail': 'Correo electrónico',
 'EDIT': 'EDITAR',
 'Edit': 'editar',
@@ -465,7 +467,7 @@
 'YES': 'SÍ',
 'Yes': 'Sí',
 'You are going to install': 'Vas a instalar',
+'You can inspect variables using the console below': 'Puedes inspeccionar las variables utilizando la terminal de abajo',
 'You need to set up and reach a': 'Necesitas configurar y obtener un',
 'Your application will be blocked until you click an action button (next, step, continue, etc.)': 'Tu aplicación será bloqueada hasta que des click en un botón de acción (siguiente, paso, continuar, etc.)',
-'You can inspect variables using the console below': 'Puedes inspeccionar las variables utilizando la terminal de abajo',
 }

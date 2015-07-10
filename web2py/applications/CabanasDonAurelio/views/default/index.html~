@@ -5,7 +5,7 @@
     <header class="container-fluid background">
       <div class="jumbotron text-center">
         {{if response.title:}}
-        <h1>Cabañas de Don Aurelio
+        <h1>{{=response.title}}
           <small>{{=response.subtitle or ''}}</small></h1>
         {{pass}}
       </div>
