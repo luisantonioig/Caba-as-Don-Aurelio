@@ -8,6 +8,10 @@
 *.bak2
 *.svn
 *.w2p
+*.table
+*.log
+*.sqlite
+*es.py
 *.class
 *.rej
 *.orig
