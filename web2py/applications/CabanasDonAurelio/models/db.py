@@ -94,8 +94,9 @@ auth.settings.reset_password_requires_verification = True
 
 db.define_table('reservaciones',
                 Field('nombre',requires=IS_NOT_EMPTY()),
-                Field('apellidoP',requires=IS_NOT_EMPTY()),
-                Field('apellidoM',requires=IS_NOT_EMPTY()),
+                Field('apellidoP','string',requires=IS_NOT_EMPTY()),
+                Field('apellidoM','string',requires=IS_NOT_EMPTY()),
                 Field('fechaIni','date'),
                 Field('fechaFin','date'),
-                Field('costo', requires=IS_NOT_EMPTY()))
+                Field('costo','double', requires=IS_NOT_EMPTY()),
+                Field('anticipo', 'double'))
