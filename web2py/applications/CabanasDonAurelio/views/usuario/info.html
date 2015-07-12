@@ -1,0 +1,49 @@
+{{extend 'layout.html'}}
+<div align="left"><strong>CABAÑAS DON AURELIO
+
+      </strong><br>
+      <br>
+      LAS CABAÑAS DE DON AURELIO SE ENCUENTRAN DENTRO DE LAS INSTALACIONES DE LA FABRICA DE MEZCAL DE DON AURELIO,  <br>
+      ESTÁN TOTALMENTE EQUIPADAS Y ACONDICIONADAS CON TODO LO NECESARIO PARA QUE USTED SE SIENTA COMO EN CASA.
+
+      <br>
+      <br>
+      LO INVITAMOS CORDIALMENTE A EXTENDER SU ESTANCIA Y CONOCER TODO SOBRE EL  MEZCAL, ADEMAS DE DISFRUTAR  DE LOS ATRACTIVOS TURÍSTICOS QUE EL PUEBLO MÁGICO DEL TEÚL DE GONZÁLEZ ORTEGA LE OFRECE.<br>
+      <br>
+    <div class="row">
+        <div class="col-md-6">
+    <strong>INFORMES Y RESERVACIONES:</strong><br>
++52 (01) 4679527745 <br>
+<a href="MAILTO:MEZCALESDECALIDAD@HOTMAIL.COM">MEZCALESDECALIDAD@HOTMAIL.COM</a>
+        </div>
+        <div class="col-md-6">
+          <strong>UBICACIÓN:</strong><br>
+            CALLE MÉXICO S/N <br>
+TEÚL DE GONZALEZ ORTEGA, ZACATECAS
+              <div id="map-canvas" style="width:500px; height:400px;"></div>
+            </div>
+    </div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js">
+    </script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(21.4599964,-103.4654631),
+          zoom: 17,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+        var place = new google.maps.LatLng(21.4599964,-103.4654631);
+        marker = new google.maps.Marker({
+            position:place,
+            title:"Cabañas Don Aurelio",
+            map:map
+        });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+ <br>
+<br>
+    </div>
