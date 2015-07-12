@@ -45,7 +45,8 @@ def _():
                URL('CabanasDonAurelio', 'default', 'reservaciones')),
                 (T('Ver Reservaciones'), False,
                 URL('CabanasDonAurelio','default', 'verReservacion'))
-              ])
+              ]),
+        ('Información', False,URL('usuario', 'info'))
         ]
 if DEVELOPMENT_MENU: _()
 
