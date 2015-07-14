@@ -1,5 +1,5 @@
-{{extend 'layout.html'}}
-{{block head}}
+{{extend "layout.html"}}
+<head>
 <header class="container-fluid background">
       <div class="jumbotron text-center" >
         {{if response.title:}}
@@ -17,10 +17,27 @@
     <p align="center">
             "CABAÑAS DON AURELIO" es un espacio ecologico de ambiente familiar en el cual usted puede bla. bla. bla.
     </p>
-
-{{end}}
-
-{{block body}}
-
-
-{{end}}
+</head>
+<body>
+    <div>
+        <button class="btn btn-info" data-toggle="modal" data-target="#miventana">
+            abrir ventana
+        </button>
+    </div>
+    <div class="modal fade" id="miventana" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4>Esta es mi ventana modal</h4>
+                </div>
+                <div class="modal-body">
+                    contenedor
+                </div>
+                <div class="modal-footer">
+                    pie de pagina
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
