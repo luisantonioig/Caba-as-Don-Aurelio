@@ -40,14 +40,10 @@ def _():
     ctr = request.controller
     # useful links to internal and external resources
     response.menu += [
-          (T('Reservaciones'), False, '#', [
-              (T('Reservaciones'), False,
-               URL('CabanasDonAurelio', 'default', 'reservaciones')),
-                (T('Ver Reservaciones'), False,
-                URL('CabanasDonAurelio','default', 'verReservacion'))
-              ]),
+         ('¿Quienes somos?', False,URL('quienessomos', 'info')),
         ('Información', False,URL('usuario', 'info'))
-        ]
+       ]
+        
 if DEVELOPMENT_MENU: _()
 
 if "auth" in locals(): auth.wikimenu()
