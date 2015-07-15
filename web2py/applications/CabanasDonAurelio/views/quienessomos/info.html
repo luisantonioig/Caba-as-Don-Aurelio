@@ -19,23 +19,66 @@
     </p>
 </head>
 <body>
-    <div>
-        <button class="btn btn-info" data-toggle="modal" data-target="#miventana">
-            abrir ventana
+    <div align= "center">
+        <button class="btn btn-info" data-toggle="modal" data-target="#miventana1" >
+            Galeria 1
+        </button>
+        <button class="btn btn-info" data-toggle="modal" data-target="#miventana2" >
+            Galeria 2
+        </button>
+        <button class="btn btn-info" data-toggle="modal" data-target="#miventana3" >
+            Galeria 3
         </button>
     </div>
-    <div class="modal fade" id="miventana" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="miventana1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" background="black">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4>Esta es mi ventana modal</h4>
+                    <h4>Galeria de imagenes</h4>
                 </div>
                 <div class="modal-body">
-                    contenedor
-                </div>
-                <div class="modal-footer">
-                    pie de pagina
+                    <div id="myCarousel" class="carousel slide" >
+                        <ol class="carousel-indicators">
+                            <li data-targe="#myCarousel" data-slide-to="0" class="active"> </li>
+                            <li data-targe="#myCarousel" data-slide-to="1"> </li>
+                            <li data-targe="#myCarousel" data-slide-to="2"> </li>
+                        </ol>
+
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src={{=URL('static/images','1.jpg')}} alt="Cabañas" class="img-responsive">
+                                <div class="carousel-caption">
+                                <h3>Cabañas</h3>
+                                <p> Cabaña 1</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src={{=URL('static/images','2.jpg')}} alt="Cabañas" class="img-responsive">
+                                <div class="carousel-caption">
+                                <h3>Cabañas</h3>
+                                <p>Cañana 2</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src={{=URL('static/images','3.jpg')}} alt="Cabañas" class="img-responsive">
+                                <div class="carousel-caption">
+                                <h3>Cabañas</h3>
+                                <p>Cabaña3</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                            <span class= "icon-prev"></span>
+                        </a>
+
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                            <span class= "icon-next"></span>
+                        </a>
+
+                    </div>
+                    <script scr ="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquer.min.js"></script>
                 </div>
             </div>
         </div>
