@@ -48,3 +48,8 @@ body {
 	padding: 10px 20px;
 	float: right;
 }
+
+#h{
+    background: url(../images/2.jpg) 50% 0 no-repeat fixed;
+    height: 700px;
+}
