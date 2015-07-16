@@ -20,7 +20,7 @@
 </head>
 <body>
     <div align= "center">
-        <button class="btn btn-info" data-toggle="modal" data-target="#miventana1" >
+        <button class="btn btn-info" data-toggle="modal" data-target="#miventana1" href={{=URL('views/quienessomos','galeria1.html')}} >
             Galeria 1
         </button>
         <button class="btn btn-info" data-toggle="modal" data-target="#miventana2" >
@@ -30,7 +30,7 @@
             Galeria 3
         </button>
     </div>
-    <div class="modal fade" id="miventana1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" max-height: "100%">
+    <!--<div class="modal fade" id="miventana1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" max-height: "100%">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header" color="black">
@@ -40,8 +40,8 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src={{=URL('static/images','caba1_1.jpg')}} alt="Cabañas">
+                            <a href="#" class="thumbnail" data-target="#imagen1">
+                                <img src={{=URL('static/images','caba1_1.jpg')}} alt="Cabañas" onclick="javascript:this.width=450;this.height=338" ondblclick="javascript:this.width=100;this.height=80" width="100"/>>
                             </a>
                         </div>
                         <div class="col-sm-6 col-md-3">
@@ -144,7 +144,7 @@
                             <span class= "icon-next"></span>
                         </a>
 
-                    </div> --!>
+                    </div> 
                     <script type="text/javascript">
                         $(document).ready(function() {
                             $('.carousel').carousel({
@@ -158,4 +158,20 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="imagen1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" max-height: "100%">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" color="black">
+                    <h4>
+                        Imagen 1
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="item">
+                        <img src={{=URL('static/images','caba1_5.jpg')}} alt="Cabañas" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
 </body>
