@@ -50,6 +50,24 @@ body {
 }
 
 #h{
-    background: url(../images/2.jpg) 50% 0 no-repeat fixed;
-    height: 700px;
+    background: url(../images/2.jpg) 50% 0 no-repeat;
+}
+
+#section2{
+    background: url(../images/caba1-2.jpg) 50% 0 no-repeat fixed;
+}
+#section3{
+    background: url(../images/caba1-1.jpg) 50% 0 no-repeat fixed;
+}
+#h, #section2, #section3{
+    min-height:715px;
+    margin:0px auto;
+    width:100%;
+    max-width:1920px;
+    position:relative;
+    background-size:cover;
+    -webkit-background-size:cover;
+}
+#section2, #section3{
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
 }
