@@ -1,6 +1,6 @@
 * {
     margin:0;
-    padding:0;
+    padding:0,0,0,0;
 }
 
 body {
@@ -48,6 +48,10 @@ body {
 	padding: 10px 20px;
 	float: right;
 }
+h2{
+    margin:0;
+    padding:0;
+}
 
 #h{
     background: url(../images/2.jpg) 50% 0 no-repeat;
@@ -70,4 +74,18 @@ body {
 }
 #section2, #section3{
     box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+/*jumbotron transparente*/
+.jumbotron.transparente {
+  background: rgba(255, 255, 255, 0.5);
+  margin-bottom:0px;
+}
+.jumbotron.transparente.principal {
+  background: rgba(255, 255, 255, 0.5);
+  margin-bottom:0px;
+}
+
+.map-canvas{
+    margin:0px;
+    padding:0px;
 }

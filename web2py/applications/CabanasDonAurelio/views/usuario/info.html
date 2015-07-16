@@ -1,21 +1,93 @@
 {{extend 'layout.html'}}
 <link rel="stylesheet" href="/CabanasDonAurelio/static/css/estilos.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script>
+			$(document).ready(function(){
+                var obj = $(".jumbotron.transparente");
+                var posicion = $("div.jumbo.transparente:first").position();
+                alert("posicion "+posicion);
+			    $('section[data-type="parallax_section"]').each(function(){
+			        $window = $(window);
+			        var $bgobj = $(this); // Variable para asignacion de objeto
+                    var obj_top = $window.scrollTop()
+                    var transparencia = 0.6;
+			        $(window).scroll(function() {
+                        $window = $(window);
+                        var obj_act_top = $(this).scrollTop();
+                        var resta = 0;
+                        if(obj_act_top < 325){
+                            var resta = obj_act_top * 0.6 / 325;
+                        }
+                        resta = .5 - resta;
+                        $('div.jumbotron.transparente.principal').css({background:'rgba(255,255,255,'+resta+')'});
+			            var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+			            // cordinadas del background
+			            var coords = '50% '+ yPos + 'px';
+			            // moviendo el background
+			            $bgobj.css({ backgroundPosition: coords });
+                        obj_top = obj_act_top
+			        });
+			    });
+			});
+		</script>
+        <link rel="stylesheet" href="/CabanasDonAurelio/static/css/estilos.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <section id="h" data-type="parallax_section" data-speed="10">
-    <article>
-        <div id="geek"></div>
-        <h2 fixed>Página: 1</h2>
-    </article>
+        <div class="jumbotron transparente principal">
+            <div class="container">
+                <h1>CABAÑAS DON AURELIO</h1>
+                <p>
+       LAS CABAÑAS DE DON AURELIO SE ENCUENTRAN DENTRO DE LAS INSTALACIONES DE LA FABRICA DE MEZCAL DE DON AURELIO, LO INVITAMOS CORDIALMENTE A EXTENDER SU ESTANCIA Y CONOCER TODO SOBRE EL  MEZCAL, ADEMAS DE DISFRUTAR  DE LOS ATRACTIVOS TURÍSTICOS QUE EL PUEBLO MÁGICO DEL TEÚL DE GONZÁLEZ ORTEGA LE OFRECE.
+                </p>
+            </div>
+        </div>
 </section>
 <section id="section2" data-type="parallax_section" data-speed="10">
-    <article>
-        <div id="geek"></div>
-        <h2>Página: 2</h2>
-    </article>
+    <div class="jumbotron transparente subtitulo">
+        <h2>Reservaciones</h2>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item active">Para hacer reservaciones comunícate con nosotros:</li>
+                <li class="list-group-item">Al teléfono +52 (01) 4679527745</li>
+                <li class="list-group-item">O bien solicita información a nuestro correo <a href="MAILTO:MEZCALESDECALIDAD@HOTMAIL.COM">MEZCALESDECALIDAD@HOTMAIL.COM</a></li>
+            </ul>
+        </div>
+        <div class="col-md-6 map-canvas">
+          <strong>UBICACIÓN:</strong><br>
+            CALLE MÉXICO S/N<br>
+TEÚL DE GONZALEZ ORTEGA, ZACATECAS<br>
+              <div id="map-canvas" style="width:500px; height:400px;"></div>
+
+    
+    <script
+      src="https://maps.googleapis.com/maps/api/js">
+    </script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(21.4599964,-103.4654631),
+          zoom: 17,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+        var place = new google.maps.LatLng(21.4599964,-103.4654631);
+        marker = new google.maps.Marker({
+            position:place,
+            title:"Cabañas Don Aurelio",
+            map:map
+        });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+ <br>
+<br>
+    </div>
+    </div>
 </section>
 <section id="section3" data-type="parallax_section" data-speed="10">
-    <article>
-        <div id="geek"></div>
-        <h2>Página: 3</h2>
-    </article>
 </section>
+</div>
