@@ -1,0 +1,66 @@
+* {
+    padding:0;
+    margin:0;
+    font-size:100%;
+    font-family:"Segoe UI";
+}
+
+body {
+    text-align:center;
+}
+
+#main a{
+    color:#fff;
+    background:#0094ff;
+    padding; 10px 20px;
+    font-size: 30px;
+}
+ 
+#main a:hover{
+    background:#00528e;
+}
+
+
+/*--- ventana ---*/
+
+
+#ventana {
+    opacity;0;
+    pointer-events:none;
+    background:rgba(0,0,0,7);
+    width:100%;
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    transition: all ease 0.5s;
+}
+
+#ventana:target {
+    opacity:1;
+    transition: all ease-in 0.5s;
+    pointer-events:all;
+}
+
+#contenido {
+    background:#fff;
+    border-radius: 10px;
+    box-shadow:#000 0px 0px 20px;
+    border: 2px solid #0094ff;
+    width: 60%;
+    margin: 5% auto;
+    
+}
+
+#contenido h2{
+    font-size:30px;
+    color:#0094ff;
+    margin-bottom: 10px;
+}
+
+#contenido p {
+    font-size:20px;
+    line-height: 30px;
+    color: #333;
+    width:90%;
+    margin:auto;
+}
