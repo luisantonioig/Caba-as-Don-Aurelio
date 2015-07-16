@@ -5,7 +5,6 @@
 			$(document).ready(function(){
                 var obj = $(".jumbotron.transparente");
                 var posicion = $("div.jumbo.transparente:first").position();
-                alert("posicion "+posicion);
 			    $('section[data-type="parallax_section"]').each(function(){
 			        $window = $(window);
 			        var $bgobj = $(this); // Variable para asignacion de objeto
@@ -15,11 +14,21 @@
                         $window = $(window);
                         var obj_act_top = $(this).scrollTop();
                         var resta = 0;
+                        var resta1 = 0;
                         if(obj_act_top < 325){
                             var resta = obj_act_top * 0.6 / 325;
                         }
-                        resta = .5 - resta;
+                        if (obj_act_top > 150 && obj_act_top < 1400){
+                            resta1= obj_act_top-725;
+                            if(resta1<0){
+                                resta1=resta1*(-1);
+                            }
+                            resta1 = obj_act_top * 0.6 / 130;
+                        }
+                        resta = .6 - resta;
+                        resta1 = .6 - resta1;
                         $('div.jumbotron.transparente.principal').css({background:'rgba(255,255,255,'+resta+')'});
+                        $('div.jumbotron.transparente.subtitulo:first').css({background:'rgba(255,255,255,'+resta+')'});
 			            var yPos = -($window.scrollTop() / $bgobj.data('speed'));
 			            // cordinadas del background
 			            var coords = '50% '+ yPos + 'px';
