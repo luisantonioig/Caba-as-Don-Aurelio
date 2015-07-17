@@ -85,6 +85,10 @@ h2{
   margin-bottom:0px;
 }
 
+.row.transparente {
+    background: rgba(255,255,255,0.5)
+}
+
 .map-canvas{
     margin:0px;
     padding:0px;
