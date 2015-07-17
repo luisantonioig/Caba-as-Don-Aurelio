@@ -8,9 +8,9 @@
         <meta name="description" content="Responsive Image Gallery with jQuery" />
         <meta name="keywords" content="jquery, carousel, image gallery, slider, responsive, flexible, fluid, resize, css3" />
 		<meta name="author" content="Codrops" />
-        <link rel="stylesheet" type="text/css" href="{{=URL('static/css','demo.css')}}" />
-		<link rel="stylesheet" type="text/css" href="{{=URL('static/css','style.css')}}" />
-		<link rel="stylesheet" type="text/css" href="{{=URL('static/css','elastislide.css')}}" />
+        <link rel="stylesheet" type="text/css" href={{=URL('static/css','demo.css')}} />
+		<link rel="stylesheet" type="text/css" href={{=URL('static/css','style.css')}} />
+		<link rel="stylesheet" type="text/css" href={{=URL('static/css','elastislide.css')}} />
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
 		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
 		<noscript>
@@ -62,7 +62,8 @@
 							</div>
 							<div class="es-carousel">
 								<ul>
-									<li><a href="#"><img src="{{=URL('static/images/thumbs','1.jpg')}}" data-large="{{=URL('static/images','1.jpg')}}" alt="image01" data-description="From off a hill whose concave womb reworded" /></a></li>
+									<li><a href="#"><img src={{=URL('static/images/thumbs','1.jpg')}} data-large={{=URL('static/images','1.jpg')}} alt="image01" data-description="From off a hill whose concave womb reworded" /></a></li>
+									<li><a href="#"><img src={{=URL('static/images/thumbs','1.jpg')}} data-large={{=URL('static/images','1.jpg')}} alt="image01" data-description="From off a hill whose concave womb reworded" /></a></li>
 									<!--<li><a href="#"><img src="images/thumbs/2.jpg" data-large="images/2.jpg" alt="image02" data-description="A plaintful story from a sistering vale" /></a></li>
 									<li><a href="#"><img src="images/thumbs/3.jpg" data-large="images/3.jpg" alt="image03" data-description="A plaintful story from a sistering vale" /></a></li>
 									<li><a href="#"><img src="images/thumbs/4.jpg" data-large="images/4.jpg" alt="image04" data-description="My spirits to attend this double voice accorded" /></a></li>
