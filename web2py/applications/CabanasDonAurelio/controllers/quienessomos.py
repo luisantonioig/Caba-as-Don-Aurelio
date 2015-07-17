@@ -4,3 +4,6 @@ def index(): return dict(message="hello from quienessomos.py")
 
 def info():
     return dict(hola='hola')
+
+def galeria():
+	return dict(hola='hola')
