@@ -1,6 +1,7 @@
 {{extend 'layout.html'}}
 <html lang="es">
     <head>
+    </br></br>
         <title>Responsive Image Gallery</title>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
@@ -41,17 +42,11 @@
     <body>
 		<div class="container">
 			<div class="header">
-				<a href="http://tympanus.net/Development/Elastislide/"><span>&laquo; Previous Demo: </span>Elastislide</a>
-				<span class="right_ab">
-					<a href="http://www.flickr.com/photos/smanography/" target="_blank">Images by Shermeee</a>
-					<a href="http://creativecommons.org/licenses/by/2.0/deed.en_GB">CC BY 2.0</a>
-					<a href="http://tympanus.net/codrops/2011/09/20/responsive-image-gallery/"><strong>back to the Codrops post</strong></a>
-				</span>
 				<div class="clr"></div>
 			</div><!-- header -->
 			
 			<div class="content">
-				<h1>Responsive Image Gallery <span>A jQuery image gallery with a thumbnail carousel</span></h1>
+				<h1>Galeria 1 <span>Imagenes de cada una de las cabañas</span></h1>
 				<div id="rg-gallery" class="rg-gallery">
 					<div class="rg-thumbs">
 						<!-- Elastislide Carousel Thumbnail Viewer -->
@@ -62,9 +57,9 @@
 							</div>
 							<div class="es-carousel">
 								<ul>
-									<li><a href="#"><img src={{=URL('static/images/thumbs','1.jpg')}} data-large={{=URL('static/images','1.jpg')}} alt="image01" data-description="From off a hill whose concave womb reworded" /></a></li>
-									<li><a href="#"><img src={{=URL('static/images/thumbs','2.jpg')}} data-large={{=URL('static/images','2.jpg')}} alt="image01" data-description="From off a hill whose concave womb reworded" /></a></li>
-									<li><a href="#"><img src={{=URL('static/images/thumbs','3.jpg')}} data-large={{=URL('static/images','3.jpg')}} alt="image01" data-description="From off a hill whose concave womb reworded" /></a></li>
+									<li><a href="#"><img src={{=URL('static/images/thumbs','1.jpg')}} data-large={{=URL('static/images','1.jpg')}} alt="image01" data-description="Imagen 1" /></a></li>
+									<li><a href="#"><img src={{=URL('static/images/thumbs','2.jpg')}} data-large={{=URL('static/images','2.jpg')}} alt="image01" data-description="Imagen 2" /></a></li>
+									<li><a href="#"><img src={{=URL('static/images/thumbs','3.jpg')}} data-large={{=URL('static/images','3.jpg')}} alt="image01" data-description="Imagen 3" /></a></li>
 									<!--<li><a href="#"><img src="images/thumbs/2.jpg" data-large="images/2.jpg" alt="image02" data-description="A plaintful story from a sistering vale" /></a></li>
 									<li><a href="#"><img src="images/thumbs/3.jpg" data-large="images/3.jpg" alt="image03" data-description="A plaintful story from a sistering vale" /></a></li>
 									<li><a href="#"><img src="images/thumbs/4.jpg" data-large="images/4.jpg" alt="image04" data-description="My spirits to attend this double voice accorded" /></a></li>
