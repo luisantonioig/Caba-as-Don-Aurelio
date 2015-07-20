@@ -41,9 +41,9 @@ def _():
     # useful links to internal and external resources
     response.menu += [
          ('¿Quienes somos?', False,URL('quienessomos', 'info')),
+        ('Servicios',False, URL('servicios','info')),
         ('Información', False,URL('usuario', 'info'))
        ]
-        
 if DEVELOPMENT_MENU: _()
 
 if "auth" in locals(): auth.wikimenu()
