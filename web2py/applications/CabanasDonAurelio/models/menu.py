@@ -42,7 +42,8 @@ def _():
     response.menu += [
          ('¿Quienes somos?', False,URL('quienessomos', 'info')),
         ('Servicios',False, URL('servicios','info')),
-        ('Información', False,URL('usuario', 'info'))
+        ('Ubicación',False, URL('ubicacion','info')),
+        ('Reservaciones',False, URL('reservaciones','info'))
        ]
 if DEVELOPMENT_MENU: _()
 

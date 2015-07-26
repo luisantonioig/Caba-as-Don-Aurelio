@@ -1,0 +1,81 @@
+{{extend 'layout.html'}}
+<link rel="stylesheet" href="/CabanasDonAurelio/static/css/estilos.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script>
+			$(document).ready(function(){
+                var obj = $(".jumbotron.transparente");
+			    $('section[data-type="parallax_section"]').each(function(){
+			        $window = $(window);
+			        var $bgobj = $(this); // Variable para asignacion de objeto
+                    var obj_top = $window.scrollTop()
+                    var transparencia = 0.6;
+			        $(window).scroll(function() {
+                        $window = $(window);
+                        var obj_act_top = $(this).scrollTop();
+                        var resta = 0;
+                        var resta1 = 0;
+                        if(obj_act_top < 325){
+                            var resta = obj_act_top * 0.6 / 325;
+                        }
+                        if (obj_act_top > 150 && obj_act_top < 1400){
+                            resta1= obj_act_top-725;
+                            if(resta1<0){
+                                resta1=resta1*(-1);
+                            }
+                            resta1 = obj_act_top * 0.6 / 130;
+                        }
+                        resta = .6 - resta;
+                        resta1 = .6 - resta1;
+                        $('div.jumbotron.transparente.principal').css({background:'rgba(255,255,255,'+resta+')'});
+                        $('div.jumbotron.transparente.subtitulo:first').css({background:'rgba(255,255,255,'+resta+')'});
+			            var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+			            // cordinadas del background
+			            var coords = '50% '+ yPos + 'px';
+			            // moviendo el background
+			            $bgobj.css({ backgroundPosition: coords });
+                        obj_top = obj_act_top
+			        });
+			    });
+			});
+		</script>
+        <link rel="stylesheet" href="/CabanasDonAurelio/static/css/estilos.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<section id="h" data-type="parallax_section" data-speed="10">
+        <div class="jumbotron transparente principal">
+            <div class="container">
+                <h1>RESERVACIONES</h1>
+                <p>
+       PARA HACER RESERVACIONES EN CABAÑAS DON AURELIO COMUNICATE AL TELEFONO +52 (01) 4679527745 O BIEN SOLICITA INFORMACION A NUESTRO CORREO MEZCALESDECALIDAD@HOTMAIL.COM
+                </p>
+                <p>
+                    HORARIO DE OFICINA 8AM - 9PM
+                </p>
+            </div>
+        </div>
+</section>
+<section id="section3" data-type="parallax_section" data-speed="10">
+    <div class="jumbotron transparente subtitulo 2">
+        <h2>En Cabañas Don Aurelio nos importa tu opinión</h2>
+    </div>
+    <div class="row transparente">
+        <form role="form" action="{{=URL('send_email')}}" method="post" name="contact_form">
+            <div class="col-md-6">
+                <label for="nombre">Nombre(s)</label>
+                <input type="text" class="form-control" id="nombre" name="nombre"
+                       placeholder="Nombre(s)">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos"
+                       placeholder="Apellidos">
+                <label for="ejemplo_email_1">Email</label>
+                <input type="email" class="form-control" id="ejemplo_email_1" name="email"
+                       placeholder="Email">
+            </div>
+            <div class="col-md-6">
+                <label for="nombre">Comentarios</label>
+                <textarea class="form-control" rows="3" name="comentarios" placeholder="Escribe aqui tus comentarios"></textarea>
+                <button type="submit" class="btn btn-default">Enviar</button>
+            </div>
+        </form>
+    </div>
+</section>
+</div>
