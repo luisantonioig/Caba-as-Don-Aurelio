@@ -43,7 +43,7 @@ def _():
          ('¿Quienes somos?', False,URL('quienessomos', 'info')),
         ('Servicios',False, URL('servicios','info')),
         ('Ubicación',False, URL('ubicacion','info')),
-        ('Información', False,URL('usuario', 'info'))
+        ('Reservaciones',False, URL('reservaciones','info'))
        ]
 if DEVELOPMENT_MENU: _()
 
