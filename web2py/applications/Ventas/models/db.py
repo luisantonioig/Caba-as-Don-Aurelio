@@ -90,3 +90,16 @@ auth.settings.reset_password_requires_verification = True
 
 ## after defining tables, uncomment below to enable auditing
 # auth.enable_record_versioning(db)
+
+db.define_table(
+    'cliente',
+    Field('nombre','string'),
+    Field('numero_tel','string'),
+    Field('email','string')
+)
+db.define_table(
+    'reservacion',
+    Field('fecha_inicio', 'date'),
+    Field('fecha_fin','date'),
+    Field('cliente','string')
+)
