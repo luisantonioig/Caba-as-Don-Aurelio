@@ -56,7 +56,7 @@ def _():
               LI(_class="divider")
               ]),
         (T('Reportes'), False, URL('cliente','index'), [
-              (T('Nuevo cliente'), False, URL('cliente', 'nuevo')),
+              (T('Frecuencia de visita'), False, URL('reportes', 'frecuencia')),
               (T('Ver clientes'), False, URL('cliente', 'ver_clientes')),
               LI(_class="divider")
               ])
