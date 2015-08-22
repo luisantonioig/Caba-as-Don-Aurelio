@@ -99,7 +99,11 @@ db.define_table(
 )
 db.define_table(
     'reservacion',
+    Field('folio'),
     Field('fecha_inicio', 'date'),
     Field('fecha_fin', 'date'),
-    Field('cliente',db.cliente)
+    Field('cliente',db.cliente),
+    Field('precio', 'double'),
+    Field('anticipo', 'double'),
+    Field('total', 'double')
 )
