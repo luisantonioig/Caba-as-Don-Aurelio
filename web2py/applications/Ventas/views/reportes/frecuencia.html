@@ -1,2 +1,10 @@
 {{extend 'layout.html'}}
-<h1>Frecuencia de visita de: {{=clientes}}</h1>
+{{i=0}}
+<h1>Frecuencia de visita</h1>
+{{for cliente in clientes:}}
+<div class="jumbotron" style="background-color:#AAA;">
+<h3>{{=cliente.nombre}}</h3>
+{{=veces_anuales[i]}} veces al año
+{{i=i+1}}
+ </div>
+{{pass}}

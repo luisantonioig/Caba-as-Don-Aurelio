@@ -97,3 +97,9 @@ db.define_table(
     Field('numero_tel','string'),
     Field('email','string')
 )
+db.define_table(
+    'reservacion',
+    Field('fecha_inicio', 'date'),
+    Field('fecha_fin', 'date'),
+    Field('cliente',db.cliente)
+)
