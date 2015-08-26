@@ -102,7 +102,7 @@ db.define_table(
     Field('folio'),
     Field('fecha_inicio', 'date'),
     Field('fecha_fin', 'date'),
-    Field('cliente',db.cliente),
+    Field('cliente','reference cliente'),
     Field('precio', 'double'),
     Field('anticipo', 'double'),
     Field('total', 'double')

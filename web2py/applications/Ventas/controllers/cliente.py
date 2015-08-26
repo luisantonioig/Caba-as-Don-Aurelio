@@ -9,7 +9,7 @@ def nuevo():
     elif formulario.errors:
         response.flash = 'Tienes errores en los datos'
     else:
-        response.flash = 'Por fabor llena los datos del cliente'
+        response.flash = 'Por favor llena los datos del cliente'
     return dict(Nuevo_cliente = formulario)
 
 def ver_clientes():
