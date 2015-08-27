@@ -1,0 +1,25 @@
+{{extend 'layout.html'}}
+<h1>
+    Nueva Reservación
+</h1>
+{{=reserva}}
+<div class="one" id="a">Hello</div>
+<div class="two" id="b">World</div>
+<script type="text/javascript">
+    function sumar()
+    {
+        var valor2=0;
+        var valor1=document.getElementById("reservacion_precio").value;
+        var valor2=document.getElementById("reservacion_anticipo").value;
+        if (valor1 >= valor2 || valor2==null){
+        document.getElementById("reservacion_total").value=parseFloat(valor1)-parseFloat(valor2);
+        }
+        else
+        {
+            alert("No se puede");
+            document.getElementById("reservacion_anticipo").value=0;
+            sumar();
+               
+        }
+    }
+</script>
