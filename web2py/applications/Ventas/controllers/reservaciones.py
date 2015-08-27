@@ -3,6 +3,8 @@ def index():
 
 def reservaciones():
     reserva=SQLFORM(db.reservacion)
+    print type(reserva[0][0][1][0])
+    print ''
     if reserva.process().accepted:
         response.flash = 'Ok!!'
     elif reserva.errors:

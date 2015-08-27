@@ -95,7 +95,8 @@ db.define_table(
     'cliente',
     Field('nombre','string'),
     Field('numero_tel','string'),
-    Field('email','string')
+    Field('email','string'),
+    format='%(nombre)s'
 )
 db.define_table(
     'reservacion',
