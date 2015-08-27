@@ -2,4 +2,16 @@
 <h1>
     Nueva Reservación
 </h1>
+<script type="text/javascript">
+    /**
+     * Funcion que se ejecuta cada vez que se añade una letra en un cuadro de texto
+     * Suma los valores de los cuadros de texto
+     */
+    function sumar()
+    {
+        var valor1=document.getElementById("reservacion_precio").value;
+        var valor2=document.getElementById("reservacion_anticipo").value;
+        document.getElementById("reservacion_total").value=parseFloat(valor1)+parseFloat(valor2);
+    }
+</script>
 {{=BEAUTIFY(response._vars)}}

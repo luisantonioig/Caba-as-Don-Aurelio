@@ -95,14 +95,15 @@ db.define_table(
     'cliente',
     Field('nombre','string'),
     Field('numero_tel','string'),
-    Field('email','string')
+    Field('email','string'),
+    format='%(nombre)s'
 )
 db.define_table(
     'reservacion',
     Field('folio'),
     Field('fecha_inicio', 'date'),
     Field('fecha_fin', 'date'),
-    Field('cliente',db.cliente),
+    Field('cliente','reference cliente'),
     Field('precio', 'double'),
     Field('anticipo', 'double'),
     Field('total', 'double')
