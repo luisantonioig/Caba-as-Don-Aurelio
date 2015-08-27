@@ -3,7 +3,8 @@ def index():
 
 def reservaciones():
     reserva=SQLFORM(db.reservacion)
-    print type(reserva[0][0][1][0])
+    reserva[0][4][1][0]=INPUT(_type='text', _class='double form-control',_id='reservacion_precio',_name='precio',_onkeyup='sumar();')
+    reserva[0][5][1][0]=INPUT(_type='text', _class='double form-control',_id='reservacion_anticipo',_name='anticipo',_onkeyup='sumar();', _value='0')
     print ''
     if reserva.process().accepted:
         response.flash = 'Ok!!'
