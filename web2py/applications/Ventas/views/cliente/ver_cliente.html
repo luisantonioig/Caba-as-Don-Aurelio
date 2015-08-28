@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+<h1>{{=datos[0].nombre}}</h1>
+<h4>{{=datos[0].numero_tel}}</h4>
+<h4>{{=datos[0].email}}</h4>
+<h2>Visitas</h2>
+{{for reservacion in reservaciones:}}
+<div class="jumbotron">
+    <h3>{{=reservacion.fecha_inicio}}</h3>
+    <h3>{{=reservacion.fecha_fin}}</h3>
+</div>
+{{pass}}

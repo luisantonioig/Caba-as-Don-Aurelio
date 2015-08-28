@@ -15,3 +15,10 @@ def nuevo():
 def ver_clientes():
     grid = SQLFORM.grid(db.cliente)
     return dict(grid=grid)
+
+def ver_cliente():
+    clave = request.vars.id
+    datos = db(db.cliente.id==clave).select(db.cliente.ALL)
+    reservaciones = db(db.reservacion.cliente==clave).select(db.reservacion.ALL)
+    print reservaciones
+    return dict(datos = datos, reservaciones=reservaciones)
