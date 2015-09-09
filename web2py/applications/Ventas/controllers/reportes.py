@@ -7,7 +7,6 @@ def frecuencia():
         print cliente.nombre
         veces_anuales.append(calcular_frecuencia_visita(cliente.id))
         print calcular_frecuencia_visita(cliente.id)
-    #veces_anuales= [10,21]
     return dict(clientes=clientes, veces_anuales=veces_anuales)
 
 def calcular_frecuencia_visita(id):

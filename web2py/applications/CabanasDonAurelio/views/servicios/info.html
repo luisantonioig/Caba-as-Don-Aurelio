@@ -1,12 +1,9 @@
 {{extend 'layout.html'}}
+<link rel="stylesheet" href="/CabanasDonAurelio/static/css/background.css">
+<section id="h" data-type="parallax_section" data-speed="10">
 <h1>Servicios</h1>
 <div class="row">
-  <div class="col-sm-6 col-md-4">
-    <a data-toggle="modal" href="#rentaDeCabañas" class="thumbnail">
-      <img src="{{=URL('static/images','caba1-1.jpg')}}" alt="100px">
-    </a>
-  </div>
-  <div class="col-sm-6 col-md-4">
+  <center>
       <a data-toggle="modal" href="#rentaDeCabañas"><h2>Renta de cabaña</h2></a>
       <div class="modal fade" id="rentaDeCabañas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
@@ -26,13 +23,14 @@
           </div>
       </div>
   </div>
-</div><div class="row">
-  <div class="col-sm-6 col-md-4">
-    <a href="#tourTaberna" data-toggle="modal" class="thumbnail">
-      <img src="{{=URL('static/images','caba1-1.jpg')}}" alt="Nada">
+    <center>
+    <a data-toggle="modal" href="#rentaDeCabañas">
+      <img src="{{=URL('static/images','2.jpg')}}" WIDTH=300 HEIGHT=275 >
     </a>
-  </div>
-  <div class="col-sm-6 col-md-4">
+    </center>
+</div>
+<div class="row">
+  <center>
       <a href="#tourTaberna" data-toggle="modal"><h2>Tour en taberna Rústica</h2></a>
       <div class="modal fade" id="tourTaberna" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
@@ -50,14 +48,15 @@
               </div>
           </div>
       </div>
-  </div>
-</div><div class="row">
-  <div class="col-sm-6 col-md-4">
-    <a href="#tourZonaArqueologica" data-toggle="modal" class="thumbnail">
-      <img src="{{=URL('static/images','caba1-1.jpg')}}" alt="Nada">
+      </center>
+    <center>
+    <a href="#tourTaberna" data-toggle="modal">
+      <img src="{{=URL('static/images','caba2-2.jpg')}}" WIDTH=300 HEIGHT=275 class="img-thumbnail">
     </a>
-  </div>
-  <div class="col-sm-6 col-md-4">
+  </center>
+</div>
+<div class="row">
+  <center>
       <a href="#tourZonaArqueologica" data-toggle="modal"><h2>Tour en zona arqueológica</h2></a>
       <div class="modal fade" id="tourZonaArqueologica" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
@@ -74,24 +73,32 @@
                   </div>
               </div>
           </div>
-      </div>
+      </center>
   </div>
-</div><div class="row">
-  <div class="col-sm-6 col-md-4">
-    <a href="#" class="thumbnail">
-      <img src="{{=URL('static/images','caba1-1.jpg')}}" alt="Nada">
+    <center>
+    <a href="#tourZonaArqueologica" data-toggle="modal">
+      <img src="{{=URL('static/images','caba1-1.jpg')}}" alt="Nada"  WIDTH=300 HEIGHT=275>
     </a>
-  </div>
-  <div class="col-sm-6 col-md-4">
-      <a href="#"><h2>Renta de ponys</h2></a>
-  </div>
-</div><div class="row">
-  <div class="col-sm-6 col-md-4">
-    <a href="#" class="thumbnail">
-      <img src="{{=URL('static/images','caba1-1.jpg')}}" alt="Nada">
-    </a>
-  </div>
-  <div class="col-sm-6 col-md-4">
-      <a href="#"><h2>Etc...</h2></a>
-  </div>
+        </center>
 </div>
+<div class="row">
+  <center>
+      <a href="#"><h2>Renta de ponys</h2></a>
+  </center>
+    <center>
+    <a href="#">
+      <img src="{{=URL('static/images','caba1-1.jpg')}}" alt="Nada"  WIDTH=300 HEIGHT=275>
+    </a>
+  </center>
+</div>
+<div class="row">
+  <center>
+      <a href="#"><h2>Etc...</h2></a>
+</center>
+  <center>
+    <a href="#">
+      <img src="{{=URL('static/images','caba1-1.jpg')}}" alt="Nada"  WIDTH=300 HEIGHT=275>
+    </a>
+  </center>
+</div>
+</section>
