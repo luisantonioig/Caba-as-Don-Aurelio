@@ -47,7 +47,7 @@ def _():
               ]),
         (T('Reservaciones'), False, URL('cliente','index'), [
               (T('Nueva Reservacion'), False, URL('reservaciones', 'reservaciones')),
-              (T('Ver clientes'), False, URL('cliente', 'ver_clientes')),
+              (T('Reservaciones existentes'), False, URL('reservaciones', 'reservaciones_existentes')),
               LI(_class="divider")
               ]),
         (T('Facturación'), False, URL('cliente','index'), [
