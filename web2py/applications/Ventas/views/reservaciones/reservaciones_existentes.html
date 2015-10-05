@@ -1,9 +1,30 @@
 {{extend 'layout.html'}}
 <h2>Hi</h2>
-<div id="fecha"></div>
-<div id="calendario-contenedor">
-    <div id="calendario-cabezera">
-        {{=cabecera}}
-    </div>
-    <div id="calendario-fechas">{{=tabla}}</div>
-</div>
+{{=calendario}}
+
+<script type="text/javascript">
+function atras(id) {
+    meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    mes = meses.indexOf(id);
+    id = meses[mes-1];
+	esconder();
+	document.getElementById(id).hidden=false;
+	document.getElementById("mes_siguiente").onClick="adelante()";
+    if (id=='Enero'){
+        document.getElementById("mes_anterior").onClick="";
+    }
+}
+function adelante(id) {
+    meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    mes = meses.indexOf(id);
+    id = meses[mes+1];
+	esconder();
+	document.getElementById(id).hidden=false;
+}
+function esconder() {
+    var x = document.getElementsByClassName("esconder");
+    for (i = 0; i < x.length; i++) {
+        x[i].hidden = "true";
+    }
+}
+</script>
