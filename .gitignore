@@ -66,3 +66,5 @@ site-packages/
 
 web2py/applications/Ventas/databases/sql.log
 web2py/applications/Ventas/languages/es.py
+*.log
+web2py/applications/Ventas/languages/es.py
